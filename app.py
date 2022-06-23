@@ -1,6 +1,5 @@
 from flask import Flask, request, redirect, render_template,url_for
 import string,random
-from numpy import short
 import pymongo
 app = Flask(__name__)
 import time
@@ -16,10 +15,6 @@ mycol = mydb["urls"]
 @app.route('/')
 def home():
 	return render_template('index.html')
-
-# @app.route('/url')
-# def url():
-# 	return render_template('url.html')
 
 #generate shortened url
 @app.route('/',methods=['POST'])

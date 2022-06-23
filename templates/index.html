@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link type="text/css" rel="stylesheet" href="/static/css/style.css">
+	<!-- import google gilroy fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Gilroy" rel="stylesheet">
+</head>
+<body>
+	<form method="POST">
+<div class="shortner-section">
+		<div class="shortner-section-wrapper">
+			<a href={{ url_for('home')}} style="text-decoration:none;"><h1>URL Shortner</h1></a>
+			<p>url shortner to shorten any url you want</p>
+			<div class="input-wrapper">
+				<h2>Enter Your URL</h2>
+				<input id="url-box "type="text" placeholder="Enter URL" value="{{url}}" name="url">
+			</div>
+			<div class="button-wrapper">
+				<button type="submit">Shorten</button>
+			</div>
+		</form>
+			<div class="result-wrapper">
+				<input id="result-box" type="text" placeholder="Shortened Url Will Display Here" value="{{shorturl}}">
+				<button onclick="copyToClipboard()">Copy Link</button>
+			</div>
+		</div>
+</div>
+
+<script>
+	// function to copy short url 
+	function copyToClipboard() {
+		var copyText = document.getElementById("result-box");
+		copyText.select();
+		copyText.setSelectionRange(0, 99999);
+		document.execCommand("copy");
+		alert("Copied the text: " + copyText.value);
+	}
+</script>
+</body>
+</html>

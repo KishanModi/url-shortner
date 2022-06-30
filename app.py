@@ -6,7 +6,7 @@ import time
 
 
 # myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-myclient = pymongo.MongoClient("mongodb+srv://kishandb:QjfhWz1Gk54ZikWJ@cluster0.3gfuw.mongodb.net/?retryWrites=true&w=majority")
+myclient = pymongo.MongoClient("")
 
 mydb = myclient["n"]
 mycol = mydb["urls"]
